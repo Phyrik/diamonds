@@ -9,6 +9,7 @@ function createPlayersAndCamps() {
 function setup() {
     createCanvas(750, 750);
     //createPlayersAndCamps();
+    createBoard(5);
     player1img = loadImage("assets/player1.png");
     image(player1img, width/2, height/2, 0, 0);
 }
@@ -31,6 +32,6 @@ function createBoard(size) {
 function draw() {
     background(200);
 
-    createBoard(5);
+    
 
 }
