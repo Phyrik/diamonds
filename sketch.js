@@ -14,9 +14,11 @@ function createBoard(size) {
 }
 
 function createPlayersAndCamps() {
-    player2img = loadImage("assets/player2.png");
-    player1jumpedimg = loadImage("assets/player1jumped.png");
-    player2jumpedimg = loadImage("assets/player2jumped.png");
+    
+}
+
+function updatePlayers(positions) {
+    
 }
 
 function setup() {
@@ -25,8 +27,6 @@ function setup() {
     createBoard(5);
 }
 
-
-
 function draw() {
-    
+    updatePlayers();
 }
