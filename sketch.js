@@ -21,14 +21,12 @@ function createPlayersAndCamps() {
 
 function setup() {
     createCanvas(750, 750);
+    background(200);
     createBoard(5);
 }
 
 
 
 function draw() {
-    background(200);
-
-
-
+    
 }
