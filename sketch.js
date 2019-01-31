@@ -1,6 +1,6 @@
 var initialLoad = true;
 var positionsOfPlayersOnes = [[150, 40, 150, 110], [300, 40, 300, 110], [450, 40, 450, 110], [600, 40, 600, 110], [225, 115, 225, 185], [375, 115, 375, 185], [525, 115, 525, 185]];
-var positionsOfPlayersZeroes = [];
+var positionsOfPlayersZeroes = [[150, 750 - 75, 50, 50], [300, 750 - 75, 50, 50], [450, 750 - 75, 50, 50], [600, 750 - 75, 50, 50], [225, 750 - 150, 50, 50], [375, 750 - 150, 50, 50], [525, 750 - 150, 50, 50]];
 var players = [];
 
 function createBoard(size) {
@@ -52,6 +52,12 @@ function updateGame(positionsOfPlayersOnes, positionsOfPlayersZeroes) {
 
     for (let i = 0; i < positionsOfPlayersOnes.length; i++) {
         line(positionsOfPlayersOnes[i][0], positionsOfPlayersOnes[i][1], positionsOfPlayersOnes[i][2], positionsOfPlayersOnes[i][3]);
+    }
+
+    fill(200);
+
+    for (let i = 0; i < positionsOfPlayersZeroes.length; i++) {
+        ellipse(positionsOfPlayersZeroes[i][0], positionsOfPlayersZeroes[i][1], positionsOfPlayersZeroes[i][2], positionsOfPlayersZeroes[i][3]);
     }
 }
 
