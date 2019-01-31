@@ -1,3 +1,8 @@
+var initialLoad = true;
+var positionsOfPlayersOnes = [[150, 40, 150, 110], [300, 40, 300, 110], [450, 40, 450, 110], [600, 40, 600, 110], [225, 115, 225, 185], [375, 115, 375, 185], [525, 115, 525, 185]];
+var positionsOfPlayersZeroes = [];
+var players = [];
+
 function createBoard(size) {
     for (let i = 1; i < size + 1; i++) {
         line(width / 5 * i, 0, 0, width / 5 * i);
@@ -13,7 +18,7 @@ function createBoard(size) {
     }
 }
 
-function createPlayersAndCamps() {
+function updateGame(positionsOfPlayersOnes, positionsOfPlayersZeroes) {
     line(60, 12.5, 90, 42.5);
     line(60, 42.5, 90, 12.5);
 
@@ -44,19 +49,20 @@ function createPlayersAndCamps() {
 
     line(width - (60 + 150 * 4), height - 12.5, width - (90 + 150 * 4), height - 42.5);
     line(width - (60 + 150 * 4), height - 42.5, width - (90 + 150 * 4), height - 12.5);
-}
 
-function updatePlayers(positions) {
-    
+    for (let i = 0; i < positionsOfPlayersOnes.length; i++) {
+        line(positionsOfPlayersOnes[i][0], positionsOfPlayersOnes[i][1], positionsOfPlayersOnes[i][2], positionsOfPlayersOnes[i][3]);
+    }
 }
 
 function setup() {
     createCanvas(750, 750);
-    background(200);
-    createBoard(5);
-    createPlayersAndCamps();
 }
 
 function draw() {
-    updatePlayers();
+    background(200);
+    createBoard(5);
+    updateGame(positionsOfPlayersOnes, positionsOfPlayersZeroes);
+    initialLoad = false;
+    //updatePlayers();
 }
